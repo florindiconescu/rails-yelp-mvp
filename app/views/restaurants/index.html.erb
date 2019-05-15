@@ -1,0 +1,14 @@
+<br>
+<div class="card d-flex"><h1>Restaurants</h1></div>
+<br>
+<%= link_to "New restaurant", new_restaurant_path, class: "btn btn-primary" %>
+<br>
+<br>
+<% @restaurants.each do |resto| %>
+<div class="card d-flex p-3 m-3">
+  <h2> <%= link_to resto.name, restaurant_path(resto) %>
+  - <%= resto.category %></h2>
+  <p>☏ <%= resto.phone_number %></p>
+  <p>🧭 <%= resto.address %></p>
+</div>
+<% end %>
